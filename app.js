@@ -4,10 +4,12 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
+var database = require('./database');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 
 var app = express();
+database.connectDB();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
